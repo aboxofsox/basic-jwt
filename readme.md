@@ -3,7 +3,7 @@ A simple JWT library for creating JWTs in TypeScript.
 
 ### Usage
 ```ts
-import {JWT} from 'jwt'
+import {JWT} from 'basic-jwt/lib/jwt'
 
 const payload = {
     username: 'foobar',

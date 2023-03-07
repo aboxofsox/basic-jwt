@@ -1,6 +1,6 @@
 {
   "name": "basic-jwt",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple library for creating JWTs.",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "lint": "tslint -p tsconfig.json",
     "done": "npm run format && npm run build-test",
     "version": "npm run format && git add -A src",
-    "publish-version": "git push && git push --tags"
+    "publish-version": "git push -u origin main && git push --tags"
   },
   "repository": {
     "type": "git",

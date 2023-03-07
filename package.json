@@ -1,6 +1,6 @@
 {
   "name": "basic-jwt",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A simple library for creating JWTs.",
   "main": "index.js",
   "scripts": {

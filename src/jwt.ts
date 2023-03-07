@@ -1,10 +1,10 @@
 import crypto from 'crypto';
 
 export const Base64 = {
-  encode: (str: string) => Buffer.from(str).toString('base64'),
-  decode: (str: string) => Buffer.from(str, 'base64').toString('ascii'),
+  encode: (str: string) => Buffer.from(str).toString('base64url'),
+  decode: (str: string) => Buffer.from(str, 'base64url').toString('ascii'),
   signature: (header: string, payload: string, secret: string) => {
-    return crypto.createHmac('sha256', secret).update(`${header}.${payload}`).digest('base64');
+    return crypto.createHmac('sha256', secret).update(`${header}.${payload}`).digest('base64url');
   },
 };
 
@@ -43,7 +43,9 @@ export const JWT = {
 
     const signatureCheck = compare(headerEncode, payloadEncode, secret, signature);
 
-    if (!signatureCheck) throw new Error(`Failed to authenticate`);
+    if (!signatureCheck) throw new Error('Failed to authenticate');
+
+    if (!signatureCheck) return payloadEncode;
 
     return payload;
   },
